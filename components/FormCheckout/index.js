@@ -21,6 +21,8 @@ export default function FormCheckout({ tickets }) {
 
   const [payments, setPayments] = useState([]);
 
+  console.log("tickets")
+  console.log(tickets)
   console.log('payments');
   console.log(payments);
 
@@ -35,13 +37,12 @@ export default function FormCheckout({ tickets }) {
         res.data.forEach((res) => {
           res.isChecked = false;
         });
+        console.log(res.data)
         setPayments(res.data);
-      } catch (err) {}
+      } catch (err) { }
     };
-
     fetctData();
   }, []);
-
   useEffect(() => {
     let paymentId = '';
     payments.filter((payment) => {
@@ -55,7 +56,6 @@ export default function FormCheckout({ tickets }) {
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [payments]);
-
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
@@ -103,7 +103,7 @@ export default function FormCheckout({ tickets }) {
         });
         router.push('/dashboard');
       }
-    } catch (err) {}
+    } catch (err) { }
   };
 
   const handleChangePayment = (e, i) => {
