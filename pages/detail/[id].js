@@ -138,7 +138,6 @@ export default function DetailPage({ detailPage, id }) {
                         action={() =>
                           handleSubmit(ticket._id, detailPage.organizer)
                         }
-
                       >
                         Join Now
                       </Button>

@@ -4,11 +4,9 @@ import Link from 'next/link';
 import NavLink from '../NavLink';
 import { useRouter } from 'next/router';
 import Cookies from 'js-cookie';
-
 export default function Navbar() {
   const router = useRouter();
   const [token, setToken] = useState('');
-
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     return setToken(Cookies.get('token'));
@@ -39,9 +37,8 @@ export default function Navbar() {
         </button>
         <div className='collapse navbar-collapse' id='navbarNavAltMarkup'>
           <div
-            className={`navbar-nav ${
-              router.pathname !== '/signin' ? 'mx-auto' : 'ms-auto'
-            } my-3 my-lg-0`}
+            className={`navbar-nav ${router.pathname !== '/signin' ? 'mx-auto' : 'ms-auto'
+              } my-3 my-lg-0`}
           >
             <NavLink href={'/'}>Home</NavLink>
             <NavLink href={'/browse'}>Browse</NavLink>
