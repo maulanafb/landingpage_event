@@ -19,9 +19,9 @@ export default function DetailPage({ detailPage, id }) {
     const fetchData = async () => {
       try {
         const res = await getData('api/v1/events');
-
+        console.log(detailPage)
         setData(res.data);
-      } catch (err) {}
+      } catch (err) { }
     };
 
     fetchData();
@@ -132,20 +132,23 @@ export default function DetailPage({ detailPage, id }) {
                       {formatDate(detailPage.date)}
                     </div>
 
-                    {detailPage.stock !== 0 && (
+                    {detailPage && (
                       <Button
                         variant={'btn-green'}
                         action={() =>
                           handleSubmit(ticket._id, detailPage.organizer)
                         }
+
                       >
                         Join Now
                       </Button>
                     )}
+
                   </>
                 ) : (
-                  ''
+                  <div>Tiket Habis</div>
                 )}
+
               </div>
             ))}
           </div>
@@ -164,7 +167,6 @@ export async function getServerSideProps(context) {
   const req = await getData(`api/v1/events/${context.params.id}`);
 
   const res = req.data;
-  console.log(res);
 
   return {
     props: { detailPage: res, id: context.params.id },

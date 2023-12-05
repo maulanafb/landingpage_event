@@ -42,7 +42,7 @@ export default function FormSignin() {
         }
       });
     } else {
-      postData('api/v1/auth/signup', form).then((res) => {
+      postData('/api/v1/auth/signup', form).then((res) => {
         if (res.data) {
           toast.success('berhasil signup', {
             position: 'top-right',
