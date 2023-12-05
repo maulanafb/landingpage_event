@@ -103,7 +103,17 @@ export default function FormCheckout({ tickets }) {
         });
         router.push('/dashboard');
       }
-    } catch (err) { }
+    } catch (err) {
+      toast.error(err?.response?.data?.msg || 'Internal server error', {
+        position: 'top-right',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+    }
   };
 
   const handleChangePayment = (e, i) => {

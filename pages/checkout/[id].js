@@ -61,7 +61,6 @@ export default function Checkout({ detailPage }) {
               ))}
             </div>
           </div>
-
           {/* form */}
           <FormCheckout tickets={detailPage.tickets} />
         </div>
