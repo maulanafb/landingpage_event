@@ -116,7 +116,9 @@ export default function DetailPage({ detailPage, id }) {
                 {ticket.statusTicketCategories ? (
                   <>
                     <div className='price my-3'>
-                      {ticket.price === 0 ? 'free' : `$${ticket.price}`}
+                      {ticket.price === 0
+                        ? 'free'
+                        : `Rp ${ticket.price.toLocaleString()}`}
                       <span>/person</span>
                     </div>
                     <div className='d-flex gap-3 align-items-center card-details'>
