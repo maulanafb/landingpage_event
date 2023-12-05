@@ -55,7 +55,7 @@ export default function Checkout({ detailPage }) {
                   {ticket._id === ticketId
                     ? ticket.price === 0
                       ? 'free'
-                      : `$${ticket.price}`
+                      : `Rp ${ticket.price.toLocaleString()}`
                     : ''}
                 </>
               ))}
