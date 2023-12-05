@@ -136,7 +136,7 @@ export default function FormCheckout({ tickets }) {
         <div className='row row-cols-lg-8 row-cols-md-2 row-cols-1 justify-content-lg-center'>
           <div className='form-title col-lg-8'>
             <span>01</span>
-            <div>Personal Details</div>
+            <div>Personal Detailsky</div>
           </div>
         </div>
         <div className='row row-cols-lg-8 row-cols-md-2 row-cols-1 justify-content-center'>
